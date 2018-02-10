@@ -10,7 +10,6 @@ class Routes extends Component {
         return (
             <main>
                 <MuiThemeProvider>
-                    <h1>Системы веб-аналитики</h1>
                     <div className='main-container'>
                         <Switch>
                             <Route exact path='/' component={Welcome}/>
@@ -18,6 +17,8 @@ class Routes extends Component {
                         </Switch>
                     </div>
                     <div className='copy'>
+                        Все рекомендации основаны на научном исследовании.
+                        <br/>
                         &copy; Николай Сергейчук
                     </div>
                 </MuiThemeProvider>
