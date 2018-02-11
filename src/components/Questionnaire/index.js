@@ -8,6 +8,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import Results from '../Results';
 
 class Questionnaire extends Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class Questionnaire extends Component {
         };
 
         this.state = {
-            finished: false,
+            finished: true,
             stepIndex: 0,
             answers: answersArray,
         };
@@ -44,7 +45,7 @@ class Questionnaire extends Component {
         const {stepIndex} = this.state;
         this.setState({
             stepIndex: stepIndex + 1,
-            finished: stepIndex >= 6,
+            finished: stepIndex >= 5,
         });
     };
 
@@ -170,15 +171,18 @@ class Questionnaire extends Component {
                 </Stepper>
                 {finished && (
                     <p style={{margin: '20px 0', textAlign: 'center'}}>
-                        <a
-                            href="#"
+                        <Results/>
+                        <br/>
+                        <RaisedButton
+                            label="Повторить тест"
+                            disableTouchRipple={true}
+                            disableFocusRipple={true}
+                            secondary={true}
                             onClick={(event) => {
-                                event.preventDefault();
-                                this.setState({stepIndex: 0, finished: false});
-                            }}
-                        >
-                            Click here
-                        </a> to reset the example.
+                            event.preventDefault();
+                            this.setState({stepIndex: 0, finished: false});
+                        }}
+                        />
                     </p>
                 )}
             </div>
