@@ -20,7 +20,10 @@ class Welcome extends Component {
                     Пройдите тест и получите рекомендации в соответствии с вашими критериями.
                 </p>
                 <p className='center'>
-                    <RaisedButton label="Начать тест" primary={true} />
+                    <RaisedButton
+                        onClick={() => window.location = '/questionnaire'}
+                        label="Начать тест" 
+                        primary={true} />
                 </p>
                 <p>
                     В системе используются критерии и рекомендации разработанные в выпускной квалификационной работе.
