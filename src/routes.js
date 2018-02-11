@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom'
 import Welcome from './components/Welcome';
+import Questionnaire from './components/Questionnaire';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Card, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import './index.css';
@@ -19,6 +20,7 @@ class Routes extends Component {
                             <CardText>
                                 <Switch>
                                     <Route exact path='/' component={Welcome}/>
+                                    <Route exact path='/questionnaire' component={Questionnaire}/>
                                     <Route path='*' component={Welcome}/>
                                 </Switch>
                             </CardText>
