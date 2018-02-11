@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom'
 import Welcome from './components/Welcome';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {Card, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import './index.css';
 
 
@@ -11,10 +12,17 @@ class Routes extends Component {
             <main>
                 <MuiThemeProvider>
                     <div className='main-container'>
-                        <Switch>
-                            <Route exact path='/' component={Welcome}/>
-                            <Route path='*' component={Welcome}/>
-                        </Switch>
+                        <Card>
+                            <CardMedia overlay={<CardTitle title="Системы веб-аналитики" subtitle="Персональные рекомендации по выбору системы" />} >
+                                <img src="http://wseok.ru/uploads/images/uslugi/big/veb_analitika.jpg" alt="" />
+                            </CardMedia>
+                            <CardText>
+                                <Switch>
+                                    <Route exact path='/' component={Welcome}/>
+                                    <Route path='*' component={Welcome}/>
+                                </Switch>
+                            </CardText>
+                        </Card>
                     </div>
                     <div className='copy'>
                         Все рекомендации основаны на научном исследовании.
