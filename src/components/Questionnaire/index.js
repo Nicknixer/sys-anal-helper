@@ -44,7 +44,7 @@ class Questionnaire extends Component {
         const {stepIndex} = this.state;
         this.setState({
             stepIndex: stepIndex + 1,
-            finished: stepIndex >= 2,
+            finished: stepIndex >= 6,
         });
     };
 
@@ -136,6 +136,33 @@ class Questionnaire extends Component {
                         <StepContent>
                             <p>
                                 Желаете ли иметь возможность быть проинформированным, если сайт окажется недоступным или произойдёт сбой
+                            </p>
+                            {this.renderStepActions(3)}
+                        </StepContent>
+                    </Step>
+                    <Step>
+                        <StepLabel>Карта кликов</StepLabel>
+                        <StepContent>
+                            <p>
+                                Некоторые системы имеют функцию "Карта кликов", позволяющую подсветить наиболее интересные места на страницах сайта.
+                            </p>
+                            <img src='https://www.alex-seo.ru/upload/iblock/bda/seokarta.jpg' />
+                            <p>
+                                Желаете ли вы увеличить шанс рекомендации данных системы?
+                            </p>
+                            {this.renderStepActions(3)}
+                        </StepContent>
+                    </Step>
+                    <Step>
+                        <StepLabel>Гибкие отчеты</StepLabel>
+                        <StepContent>
+                            <p>
+                                Основной идеей такой функции является выбор
+                                необходимых метрик, необходимых периодов, а далее сохранение в виде
+                                отдельного типа отчета.
+                            </p>
+                            <p>
+                                Данная функция рекомендуется для продвинутых пользователей систем веб-аналитики.
                             </p>
                             {this.renderStepActions(3)}
                         </StepContent>
